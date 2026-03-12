@@ -1,0 +1,846 @@
+﻿<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Osama Khlil — Software Developer</title>
+  <meta name="description"
+    content="Portfolio van Osama Khlil, Software Developer in Arnhem. Gespecialiseerd in Laravel, PHP en moderne webapplicaties." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div id="cur"></div>
+  <div id="cur-r"></div>
+  <canvas id="particles"></canvas>
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
+
+  <!-- ═══ INTRO ═══ -->
+  <div id="intro">
+    <div class="i-tag">Portfolio &nbsp;·&nbsp; 2026</div>
+    <div class="i-name">OK.</div>
+    <div class="i-sub">Osama Khlil &nbsp;·&nbsp; Software Developer &nbsp;·&nbsp; Arnhem</div>
+    <div class="i-bar">
+      <div class="i-fill"></div>
+    </div>
+    <div class="i-counter" id="iCounter">0%</div>
+    <button class="i-skip" onclick="skipIntro()">overslaan &rarr;</button>
+  </div>
+
+  <!-- ═══ NAV ═══ -->
+  <nav id="nav">
+    <a href="#hero" class="n-logo">OK<em>.</em></a>
+    <ul class="n-links">
+      <li><a href="#about">Over mij</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projecten</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="n-cta">Hire me</a>
+    <button class="n-ham" id="ham" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE NAV OVERLAY -->
+  <div class="m-nav" id="mNav">
+    <ul>
+      <li><a href="#about" onclick="closeMNav()">Over mij</a></li>
+      <li><a href="#skills" onclick="closeMNav()">Skills</a></li>
+      <li><a href="#projects" onclick="closeMNav()">Projecten</a></li>
+      <li><a href="#contact" onclick="closeMNav()">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn b-fill m-nav-cta" onclick="closeMNav()">Hire me &rarr;</a>
+    <div class="m-nav-sub">
+      <a href="mailto:a.asamaklil500@gmail.com">Email</a>
+      <span style="color:var(--border2)">·</span>
+      <a href="https://github.com/Osama-khalail" target="_blank">GitHub</a>
+      <span style="color:var(--border2)">·</span>
+      <a href="https://www.linkedin.com/in/osama-almohamad-khalil-92430916a" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+
+  <!-- ═══ HERO ═══ -->
+  <section id="hero">
+    <div class="h-layout">
+      <div>
+        <div class="h-tag" style="animation:fu .6s .1s both;opacity:0">
+          <div class="h-avail-dot"></div>
+          Beschikbaar voor werk &middot; Arnhem NL
+        </div>
+        <h1 class="h-name" style="animation:fu .7s .3s both;opacity:0">
+          <span class="split-word"><span class="char">O</span><span class="char">s</span><span
+              class="char">a</span><span class="char">m</span><span class="char">a</span></span><br>
+          <span class="dim"><span class="split-word"><span class="char">K</span><span class="char">h</span><span
+                class="char">l</span><span class="char">i</span><span class="char">l</span></span></span>
+        </h1>
+        <div class="h-role" style="animation:fu .6s .5s both;opacity:0">Software Developer &middot; Laravel &amp; PHP
+        </div>
+        <p class="h-desc" style="animation:fu .6s .65s both;opacity:0">
+          Voorraadbeheer&shy;systeem gebouwd bij <strong>Reme Techniek</strong><br>
+          in Laravel &amp; PHP &mdash; MBO4 gediplomeerd.<br>
+          Klaar voor de volgende stap.
+        </p>
+        <div class="h-cta" style="animation:fu .6s .8s both;opacity:0">
+          <a href="#projects" class="btn b-fill">Mijn werk &rarr;</a>
+          <a href="#contact" class="btn b-out">Contact</a>
+        </div>
+      </div>
+
+      <!-- AVATAR -->
+      <div style="position:relative;animation:fu .8s .55s both;opacity:0">
+        <div class="av-frame">
+          <div class="av-c tl"></div>
+          <div class="av-c tr"></div>
+          <div class="av-c bl"></div>
+          <div class="av-c br"></div>
+          <svg width="250" height="340" viewBox="0 0 250 340" fill="none" xmlns="http://www.w3.org/2000/svg"
+            style="position:relative;z-index:1">
+            <!-- Shadow -->
+            <ellipse cx="125" cy="333" rx="68" ry="7" fill="rgba(0,0,0,.5)" />
+            <!-- Body jacket dark blue -->
+            <path d="M32 238 Q38 196 60 190 L88 206 L125 225 L162 206 L190 190 Q212 196 218 238 L222 340 L28 340Z"
+              fill="#1a1b30" />
+            <path d="M88 206 L125 265 L125 340 L32 340 L32 238Z" fill="#141525" />
+            <path d="M162 206 L125 265 L125 340 L218 340 L218 238Z" fill="#141525" />
+            <!-- Shirt -->
+            <path d="M105 206 L125 248 L145 206 L125 196Z" fill="#1e1f35" />
+            <!-- Collar -->
+            <path d="M93 200 L106 224 L125 196" fill="#181929" stroke="#252640" stroke-width=".5" />
+            <path d="M157 200 L144 224 L125 196" fill="#181929" stroke="#252640" stroke-width=".5" />
+            <!-- Jacket accent lines -->
+            <line x1="55" y1="210" x2="45" y2="340" stroke="#252640" stroke-width="1" opacity=".5" />
+            <line x1="195" y1="210" x2="205" y2="340" stroke="#252640" stroke-width="1" opacity=".5" />
+            <!-- Neck -->
+            <rect x="109" y="188" width="32" height="28" rx="6" fill="#c8a87c" />
+            <!-- Head -->
+            <ellipse cx="125" cy="156" rx="56" ry="62" fill="#c9a97d" />
+            <!-- Hair -->
+            <path
+              d="M69 142 Q72 78 125 72 Q178 78 181 142 Q172 112 156 100 Q140 90 125 90 Q110 90 94 100 Q78 112 69 142Z"
+              fill="#160c05" />
+            <path
+              d="M69 142 Q66 128 67 114 Q70 90 84 80 Q100 70 125 68 Q150 70 166 80 Q180 90 183 114 Q184 128 181 142 Q172 112 156 100 Q140 90 125 90 Q110 90 94 100 Q78 112 69 142Z"
+              fill="#160c05" />
+            <!-- Ear L -->
+            <ellipse cx="69" cy="158" rx="11" ry="14" fill="#c09870" />
+            <ellipse cx="69" cy="158" rx="6.5" ry="9" fill="#b48a60" />
+            <!-- Ear R -->
+            <ellipse cx="181" cy="158" rx="11" ry="14" fill="#c09870" />
+            <ellipse cx="181" cy="158" rx="6.5" ry="9" fill="#b48a60" />
+            <!-- Eyes -->
+            <ellipse cx="107" cy="152" rx="13.5" ry="10.5" fill="#f5f3ee" />
+            <ellipse cx="143" cy="152" rx="13.5" ry="10.5" fill="#f5f3ee" />
+            <ellipse cx="109" cy="153" rx="8.5" ry="8" fill="#2e1a0a" />
+            <ellipse cx="145" cy="153" rx="8.5" ry="8" fill="#2e1a0a" />
+            <circle cx="110" cy="153" r="5" fill="#120803" />
+            <circle cx="146" cy="153" r="5" fill="#120803" />
+            <circle cx="112" cy="150" r="2.2" fill="white" />
+            <circle cx="148" cy="150" r="2.2" fill="white" />
+            <!-- Eyebrows -->
+            <path d="M92 141 Q105 134 119 138" stroke="#160c05" stroke-width="4" stroke-linecap="round" fill="none" />
+            <path d="M131 138 Q145 134 158 141" stroke="#160c05" stroke-width="4" stroke-linecap="round" fill="none" />
+            <!-- Nose -->
+            <path d="M120 163 Q117 177 110 182 Q118 187 125 187 Q132 187 140 182 Q133 177 130 163Z" fill="#b8906a" />
+            <!-- Mouth -->
+            <path d="M110 196 Q125 207 140 196" stroke="#8a5c35" stroke-width="2.5" stroke-linecap="round"
+              fill="none" />
+            <path d="M113 196 Q125 202 137 196" stroke="#c49060" stroke-width="1.2" stroke-linecap="round" fill="none"
+              opacity=".4" />
+            <!-- Beard shadow -->
+            <ellipse cx="125" cy="204" rx="28" ry="10" fill="rgba(18,8,2,.18)" />
+            <!-- Arms -->
+            <path d="M34 250 Q17 262 19 296 L38 300 Q40 272 54 260Z" fill="#1a1b30" />
+            <path d="M216 250 Q233 262 231 296 L212 300 Q210 272 196 260Z" fill="#1a1b30" />
+            <!-- Hands -->
+            <ellipse cx="29" cy="298" rx="11" ry="9" fill="#c09870" />
+            <ellipse cx="221" cy="298" rx="11" ry="9" fill="#c09870" />
+            <!-- Laptop base -->
+            <rect x="70" y="305" width="110" height="7" rx="2" fill="#1a1b2e" />
+            <!-- Laptop screen -->
+            <rect x="78" y="278" width="94" height="28" rx="3" fill="#161728" stroke="#252640" stroke-width="1" />
+            <rect x="82" y="281" width="86" height="22" rx="2" fill="#0d0e1a" />
+            <!-- Code lines on screen -->
+            <rect x="86" y="285" width="14" height="1.5" rx=".5" fill="#7c6af5" opacity=".8" />
+            <rect x="103" y="285" width="30" height="1.5" rx=".5" fill="#6dd5ed" opacity=".6" />
+            <rect x="86" y="290" width="22" height="1.5" rx=".5" fill="#a78bfa" opacity=".6" />
+            <rect x="111" y="290" width="20" height="1.5" rx=".5" fill="#34d399" opacity=".5" />
+            <rect x="86" y="295" width="18" height="1.5" rx=".5" fill="#7c6af5" opacity=".5" />
+            <rect x="107" y="295" width="26" height="1.5" rx=".5" fill="#6dd5ed" opacity=".4" />
+          </svg>
+          <div class="av-lbl">OSAMA K. &middot; DEV &middot; '03</div>
+        </div>
+        <div class="av-badge">OPEN<br>FOR<br>WORK</div>
+        <div class="av-status">
+          <div class="s-dot"></div>
+          <span style="font-family:var(--fm);font-size:.62rem;color:var(--muted2)">beschikbaar</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="h-scroll" id="scrollHint">
+    <div class="h-scroll-line"></div>
+    <span>scroll</span>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- ═══ TECH MARQUEE ═══ -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <!-- set 1 -->
+      <span class="m-item"><span class="m-dot"></span>Laravel</span>
+      <span class="m-item"><span class="m-dot"></span>PHP 8</span>
+      <span class="m-item"><span class="m-dot"></span>MySQL</span>
+      <span class="m-item"><span class="m-dot"></span>JavaScript</span>
+      <span class="m-item"><span class="m-dot"></span>HTML5</span>
+      <span class="m-item"><span class="m-dot"></span>CSS3</span>
+      <span class="m-item"><span class="m-dot"></span>Git</span>
+      <span class="m-item"><span class="m-dot"></span>REST API</span>
+      <span class="m-item"><span class="m-dot"></span>Eloquent ORM</span>
+      <span class="m-item"><span class="m-dot"></span>MVC Pattern</span>
+      <span class="m-item"><span class="m-dot"></span>Composer</span>
+      <span class="m-item"><span class="m-dot"></span>NPM</span>
+      <span class="m-item"><span class="m-dot"></span>Windows Server</span>
+      <span class="m-item"><span class="m-dot"></span>Networking</span>
+      <!-- set 2 (exact copy for seamless loop) -->
+      <span class="m-item"><span class="m-dot"></span>Laravel</span>
+      <span class="m-item"><span class="m-dot"></span>PHP 8</span>
+      <span class="m-item"><span class="m-dot"></span>MySQL</span>
+      <span class="m-item"><span class="m-dot"></span>JavaScript</span>
+      <span class="m-item"><span class="m-dot"></span>HTML5</span>
+      <span class="m-item"><span class="m-dot"></span>CSS3</span>
+      <span class="m-item"><span class="m-dot"></span>Git</span>
+      <span class="m-item"><span class="m-dot"></span>REST API</span>
+      <span class="m-item"><span class="m-dot"></span>Eloquent ORM</span>
+      <span class="m-item"><span class="m-dot"></span>MVC Pattern</span>
+      <span class="m-item"><span class="m-dot"></span>Composer</span>
+      <span class="m-item"><span class="m-dot"></span>NPM</span>
+      <span class="m-item"><span class="m-dot"></span>Windows Server</span>
+      <span class="m-item"><span class="m-dot"></span>Networking</span>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- ═══ OVER MIJ ═══ -->
+  <section class="sec" id="about">
+    <div class="s-lbl fi-left fi">Over mij</div>
+    <h2 class="s-title fi">Mijn verhaal</h2>
+
+    <div class="a-grid">
+      <!-- LEFT: text + timeline -->
+      <div>
+        <div class="a-txt fi-left fi" style="transition-delay:.05s">
+          <p>Ik ben <strong>Osama Khlil</strong>, een ambitieuze en betrouwbare ICT-professional uit Arnhem. Ik
+            combineer technische kennis van <strong>backend- en webontwikkeling</strong> met praktische
+            ICT-supportervaring.</p>
+          <p>Als <strong>Software Developer bij Reme Techniek</strong> heb ik een voorraadbeheer&shy;systeem voor het
+            magazijn ontwikkeld in Laravel en PHP, en zorg ik voor het beheer van de gebouwbeheersystemen. Ik heb mezelf
+            grotendeels zelfstandig ontwikkeld en sta altijd open voor nieuwe uitdagingen.</p>
+          <p>Eerlijkheid, nauwkeurigheid en samenwerken staan centraal in mijn aanpak. Ik ga voor <strong>code die
+              werkt, schaalbaar is en leesbaar blijft</strong>.</p>
+        </div>
+
+        <!-- Timeline -->
+        <div class="timeline fi-left fi" style="margin-top:36px;transition-delay:.15s">
+          <div class="tl-item">
+            <div class="tl-year">Apr 2024 — heden</div>
+            <div class="tl-role">Software Developer</div>
+            <div class="tl-co">Reme Techniek &middot; Arnhem</div>
+            <div class="tl-desc">Voorraadbeheer&shy;systeem ontwikkeld in Laravel &amp; PHP voor het magazijn.
+              Verantwoordelijk voor het beheren en ondersteunen van de gebouwbeheersystemen.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">Sep 2023 — Feb 2024</div>
+            <div class="tl-role">Software Developer <span class="tl-stage">(Stage)</span></div>
+            <div class="tl-co">C-D-E-D-S</div>
+            <div class="tl-desc">Webshop gebouwd voor Kringloop Arnhem in Laravel, Blade en PHP. Inclusief
+              productbeheer, bestelflow en admin&shy;dashboard. Zelfstandig uitgevoerd binnen professionele omgeving.
+            </div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">Jul 2023 — Jun 2025</div>
+            <div class="tl-role">Sales Advisor <span class="tl-stage">(bijbaan)</span></div>
+            <div class="tl-co">Odido</div>
+            <div class="tl-desc">Klanten adviseren over telecom producten, verkoopdoelstellingen behalen en
+              klantenservice bieden.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-year">Mei 2022 — Jun 2022</div>
+            <div class="tl-role">ICT-medewerker</div>
+            <div class="tl-co">ASSET Rail</div>
+            <div class="tl-desc">Hardware installatie en configuratie van werkplekken, collega's ondersteunen bij
+              ICT-problemen.</div>
+          </div>
+        </div>
+
+        <!-- Opleidingen -->
+        <div class="edu-list fi-left fi" style="margin-top:28px;transition-delay:.22s">
+          <div class="edu-item">
+            <span class="edu-lvl">MBO4</span>
+            <div>
+              <div class="edu-title">Software Developer <span class="edu-type">(BBL)</span></div>
+              <div class="edu-sub">ROC &middot; Arnhem</div>
+            </div>
+          </div>
+          <div class="edu-item">
+            <span class="edu-lvl">MBO2</span>
+            <div>
+              <div class="edu-title">Medewerker ICT Support</div>
+              <div class="edu-sub">ROC &middot; Arnhem</div>
+            </div>
+          </div>
+        </div>
+
+        <a href="#contact" class="btn b-out fi-left fi"
+          style="margin-top:24px;display:inline-flex;transition-delay:.3s">Neem contact op &rarr;</a>
+      </div>
+
+      <!-- RIGHT: stats + code terminal -->
+      <div>
+        <div class="stats fi-right fi" style="margin-bottom:20px;transition-delay:.1s">
+          <div class="stat">
+            <div class="s-n" data-count="2" data-suffix="+">0</div>
+            <div class="s-l">jaar developer ervaring</div>
+          </div>
+          <div class="stat">
+            <div class="s-n" data-count="2">0</div>
+            <div class="s-l">diploma's behaald</div>
+          </div>
+          <div class="stat">
+            <div class="s-n" data-count="4">0</div>
+            <div class="s-l">werkgevers gehad</div>
+          </div>
+          <div class="stat">
+            <div class="s-n" data-count="22">0</div>
+            <div class="s-l">jaar oud</div>
+          </div>
+        </div>
+
+        <!-- Code terminal -->
+        <div class="code-term fi-scale fi" style="transition-delay:.2s">
+          <div class="ct-bar">
+            <div class="ct-dot r"></div>
+            <div class="ct-dot y"></div>
+            <div class="ct-dot g"></div>
+            <div class="ct-fname">osama@dev: ~/portfolio</div>
+          </div>
+          <div class="ct-body">
+            <div class="ct-line">
+              <span class="ct-p">$</span>
+              <span class="ct-cmd">php artisan about</span>
+            </div>
+            <span class="ct-out"><span class="ct-g">Developer</span> Osama Khlil</span>
+            <span class="ct-out"><span class="ct-v">Stack</span> Laravel · PHP · MySQL</span>
+            <span class="ct-out"><span class="ct-s">Location</span> Arnhem, Netherlands</span>
+            <span class="ct-out"><span class="ct-k">Status</span> <span class="ct-g">Available for work ✓</span></span>
+            <div class="ct-line" style="margin-top:10px">
+              <span class="ct-p">$</span>
+              <span class="ct-cmd">git log --oneline -3</span>
+            </div>
+            <span class="ct-out"><span class="ct-g">e3a1f2c</span> feat: voorraadbeheer rapportage module</span>
+            <span class="ct-out"><span class="ct-v">b4d5f6a</span> fix: stock query performance</span>
+            <span class="ct-out"><span class="ct-s">c9f8e7b</span> refactor: controller clean-up</span>
+            <div class="ct-line" style="margin-top:10px">
+              <span class="ct-p">$</span>
+              <span class="ct-cmd" id="ctTyped"></span><span class="ct-cursor"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="div"></div>
+
+  <!-- ═══ SKILLS ═══ -->
+  <section class="sec" id="skills">
+    <div class="s-lbl fi-left fi">Skills</div>
+    <h2 class="s-title fi">Wat ik beheers</h2>
+    <div class="sk-grid fi-stagger fi">
+      <div class="sk">
+        <span class="sk-icon">🔥</span>
+        <div class="sk-top">
+          <div class="sk-name">Laravel</div>
+          <div class="sk-pct">88%</div>
+        </div>
+        <div class="sk-bar">
+          <div class="sk-fill" data-w="88%"></div>
+        </div>
+        <div class="sk-sub">Framework &middot; PHP &middot; MVC &middot; Eloquent</div>
+      </div>
+      <div class="sk">
+        <span class="sk-icon">⚙️</span>
+        <div class="sk-top">
+          <div class="sk-name">PHP</div>
+          <div class="sk-pct">85%</div>
+        </div>
+        <div class="sk-bar">
+          <div class="sk-fill" data-w="85%"></div>
+        </div>
+        <div class="sk-sub">Back-end &middot; OOP &middot; REST API</div>
+      </div>
+      <div class="sk">
+        <span class="sk-icon">🎨</span>
+        <div class="sk-top">
+          <div class="sk-name">HTML / CSS</div>
+          <div class="sk-pct">82%</div>
+        </div>
+        <div class="sk-bar">
+          <div class="sk-fill" data-w="82%"></div>
+        </div>
+        <div class="sk-sub">Semantisch &middot; Flexbox &middot; Grid</div>
+      </div>
+      <div class="sk">
+        <span class="sk-icon">🗄️</span>
+        <div class="sk-top">
+          <div class="sk-name">MySQL</div>
+          <div class="sk-pct">80%</div>
+        </div>
+        <div class="sk-bar">
+          <div class="sk-fill" data-w="80%"></div>
+        </div>
+        <div class="sk-sub">Database &middot; Queries &middot; Relaties &middot; Migraties</div>
+      </div>
+      <div class="sk">
+        <span class="sk-icon">🔀</span>
+        <div class="sk-top">
+          <div class="sk-name">Git</div>
+          <div class="sk-pct">78%</div>
+        </div>
+        <div class="sk-bar">
+          <div class="sk-fill" data-w="78%"></div>
+        </div>
+        <div class="sk-sub">Versiebeheer &middot; GitHub &middot; Branches</div>
+      </div>
+      <div class="sk">
+        <span class="sk-icon">🖥️</span>
+        <div class="sk-top">
+          <div class="sk-name">Windows Beheer</div>
+          <div class="sk-pct">75%</div>
+        </div>
+        <div class="sk-bar">
+          <div class="sk-fill" data-w="75%"></div>
+        </div>
+        <div class="sk-sub">Systemen &middot; Netwerk &middot; IT Support</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="div"></div>
+
+  <!-- ═══ PROJECTEN ═══ -->
+  <section class="sec" id="projects">
+    <div class="s-lbl fi-left fi">Projecten</div>
+    <h2 class="s-title fi">Wat ik heb gebouwd</h2>
+    <div class="p-grid fi-stagger fi">
+      <div class="proj">
+        <div class="p-num">01 ——</div>
+        <div class="p-title">Voorraadbeheer&shy;systeem</div>
+        <p class="p-desc">Volledig voorraadbeheer&shy;systeem gebouwd voor het magazijn van Reme Techniek. Medewerkers
+          kunnen via de webapplicatie producten in- en uitboeken, de voorraad inzien en rapporten genereren. Inclusief
+          beheer&shy;paneel en gebruikers&shy;authenticatie.</p>
+        <div class="p-tags"><span class="tag">Laravel</span><span class="tag">PHP 8</span><span
+            class="tag">MySQL</span><span class="tag">Eloquent</span><span class="tag">MVC</span></div>
+      </div>
+      <div class="proj">
+        <div class="p-num">02 ——</div>
+        <div class="p-title">Webshop &mdash; Kringloop Arnhem</div>
+        <p class="p-desc">Volledige webshop gebouwd voor Kringloop Arnhem. Inclusief product&shy;catalogus,
+          winkelwagentje en product&shy;flow voor klanten. Backend met een admin&shy;dashboard om bestellingen,
+          producten en gebruikers te beheren.</p>
+        <div class="p-tags"><span class="tag">Laravel</span><span class="tag">Blade</span><span
+            class="tag">PHP</span><span class="tag">Admin Dashboard</span><span class="tag">MySQL</span></div>
+      </div>
+      <div class="proj">
+        <div class="p-num">03 ——</div>
+        <div class="p-title">Portfolio Website</div>
+        <p class="p-desc">Deze portfolio website — volledig zelf gebouwd zonder frameworks. Scroll-animaties, responsive
+          design, code-terminal en een interactief deeltjes&shy;canvas. Laat zien wat ik kan buiten de dagelijkse
+          werkomgeving.</p>
+        <div class="p-tags"><span class="tag">HTML5</span><span class="tag">CSS3</span><span
+            class="tag">JavaScript</span><span class="tag">Animaties</span></div>
+      </div>
+      <div class="proj p-empty">
+        <div class="p-ei">
+          <div style="font-size:1.6rem;margin-bottom:10px">&#128640;</div>Meer projecten komen eraan&hellip;
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="div"></div>
+
+  <!-- ═══ CONTACT ═══ -->
+  <section class="sec" id="contact">
+    <div class="s-lbl fi-left fi">Contact</div>
+    <h2 class="s-title fi">Laten we praten</h2>
+    <div class="c-grid">
+      <div class="fi-left fi">
+        <p class="c-intro">Op zoek naar een gedreven developer? Ik sta open voor nieuwe kansen, samenwerkingen of gewoon
+          een goed gesprek over code en tech.</p>
+        <div class="c-items">
+          <a href="mailto:a.asamaklil500@gmail.com" class="cl">&#9993;&nbsp;
+            a.asamaklil500@gmail.com<span>EMAIL</span></a>
+          <a href="https://www.linkedin.com/in/osama-almohamad-khalil-92430916a" target="_blank" class="cl">in&nbsp;
+            linkedin.com/in/osama-khlil<span>PROFIEL</span></a>
+          <a href="https://github.com/Osama-khalail" target="_blank" class="cl">&#10022;&nbsp;
+            github.com/Osama-khalail<span>CODE</span></a>
+        </div>
+      </div>
+      <div class="fi-right fi">
+        <form class="c-form" id="contactForm" action="https://formspree.io/f/xeerkqrj" method="POST">
+          <input type="text" name="name" placeholder="Jouw naam" required />
+          <input type="email" name="email" placeholder="Jouw e-mail" required />
+          <textarea name="message" placeholder="Jouw bericht..." required></textarea>
+          <button type="submit" class="btn b-fill" style="justify-content:center;border:none">Verstuur bericht
+            &rarr;</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 <strong>Osama Khlil</strong> &mdash; Software Developer</p>
+    <p>HTML &middot; CSS &middot; JS &middot; <strong>Arnhem, NL</strong></p>
+  </footer>
+
+  <script>
+    /* ─────────────────────────────────────────
+       PARTICLE CANVAS
+    ───────────────────────────────────────── */
+    (function () {
+      const canvas = document.getElementById('particles');
+      const ctx = canvas.getContext('2d');
+      let W, H, pts = [];
+      function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight }
+      resize(); window.addEventListener('resize', resize, { passive: true });
+      function rand(a, b) { return a + Math.random() * (b - a) }
+      class Dot {
+        constructor() { this.reset() }
+        reset() {
+          this.x = rand(0, W); this.y = rand(0, H);
+          this.r = rand(.6, 1.8); this.vx = rand(-.25, .25); this.vy = rand(-.25, .25);
+          this.alpha = rand(.2, .55); this.da = rand(.003, .007) * (Math.random() > .5 ? 1 : -1);
+        }
+        update() {
+          this.x += this.vx; this.y += this.vy; this.alpha += this.da;
+          if (this.alpha < .1 || this.alpha > .6) this.da *= -1;
+          if (this.x < -5 || this.x > W + 5 || this.y < -5 || this.y > H + 5) this.reset();
+        }
+        draw() {
+          ctx.beginPath(); ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(167,139,250,${this.alpha})`; ctx.fill();
+        }
+      }
+      for (let i = 0; i < 80; i++) pts.push(new Dot());
+      function frame() {
+        ctx.clearRect(0, 0, W, H);
+        pts.forEach(p => { p.update(); p.draw() });
+        for (let i = 0; i < pts.length; i++) {
+          for (let j = i + 1; j < pts.length; j++) {
+            const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y;
+            const d = Math.sqrt(dx * dx + dy * dy);
+            if (d < 110) {
+              ctx.beginPath(); ctx.moveTo(pts[i].x, pts[i].y); ctx.lineTo(pts[j].x, pts[j].y);
+              ctx.strokeStyle = `rgba(108,92,231,${.13 * (1 - d / 110)})`; ctx.lineWidth = .5; ctx.stroke();
+            }
+          }
+        }
+        requestAnimationFrame(frame);
+      }
+      frame();
+      canvas.style.cssText = 'position:fixed;inset:0;z-index:0;pointer-events:none';
+    })();
+
+    /* ─────────────────────────────────────────
+       CUSTOM CURSOR
+    ───────────────────────────────────────── */
+    const cur = document.getElementById('cur'), ring = document.getElementById('cur-r');
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    if (cur && ring) {
+      document.addEventListener('mousemove', e => {
+        mx = e.clientX; my = e.clientY;
+        cur.style.left = mx + 'px'; cur.style.top = my + 'px';
+      }, { passive: true });
+      (function loop() { rx += (mx - rx) * .11; ry += (my - ry) * .11; ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; requestAnimationFrame(loop) })();
+    }
+
+    /* ─────────────────────────────────────────
+       INTRO / LOADER
+    ───────────────────────────────────────── */
+    function skipIntro() { doOut() }
+    const counter = document.getElementById('iCounter');
+    let pct = 0;
+    const ctInterval = setInterval(() => {
+      pct = Math.min(100, pct + Math.floor(Math.random() * 8) + 2);
+      if (counter) counter.textContent = pct + '%';
+      if (pct >= 100) clearInterval(ctInterval);
+    }, 90);
+    window.addEventListener('load', () => setTimeout(doOut, 3600));
+    function doOut() {
+      clearInterval(ctInterval); if (counter) counter.textContent = '100%';
+      const el = document.getElementById('intro');
+      if (!el || el._leaving) return; el._leaving = true;
+      setTimeout(() => {
+        el.classList.add('out');
+        el.addEventListener('animationend', () => {
+          el.remove(); document.getElementById('scrollHint')?.classList.add('vis');
+        }, { once: true });
+      }, 200);
+    }
+
+    /* ─────────────────────────────────────────
+       HAMBURGER MENU
+    ───────────────────────────────────────── */
+    const ham = document.getElementById('ham');
+    const mNav = document.getElementById('mNav');
+    function openMNav() {
+      if (!mNav || !ham) return;
+      mNav.classList.add('open'); ham.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMNav() {
+      if (!mNav || !ham) return;
+      mNav.classList.remove('open'); ham.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    if (ham) ham.addEventListener('click', () => mNav.classList.contains('open') ? closeMNav() : openMNav());
+    if (mNav) mNav.addEventListener('click', e => { if (e.target === mNav) closeMNav(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMNav(); });
+
+    /* ─────────────────────────────────────────
+       SPLIT-WORD CHAR REVEAL DELAYS
+    ───────────────────────────────────────── */
+    document.querySelectorAll('.split-word').forEach(word => {
+      word.querySelectorAll('.char').forEach((ch, i) => {
+        ch.style.transitionDelay = (i * 0.04) + 's';
+      });
+    });
+    // hero name is immediately in view — trigger char reveal to match fu animation (300ms delay)
+    setTimeout(() => document.querySelector('.h-name')?.classList.add('vis'), 350);
+
+    /* ─────────────────────────────────────────
+       TYPING EFFECT — hero role
+    ───────────────────────────────────────── */
+    const roleEl = document.querySelector('.h-role');
+    if (roleEl) {
+      const phrases = ['Software Developer · Laravel & PHP', 'Back-end Developer · Clean Code', 'Web Developer · Arnhem, NL'];
+      let pi = 0, ci = 0, deleting = false;
+      roleEl.innerHTML = '<span id="typed"></span><span class="type-cursor"></span>';
+      const typed = document.getElementById('typed');
+      function typeLoop() {
+        const phrase = phrases[pi];
+        if (!deleting) { typed.textContent = phrase.slice(0, ++ci); if (ci === phrase.length) { deleting = true; setTimeout(typeLoop, 2200); return } }
+        else { typed.textContent = phrase.slice(0, --ci); if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; setTimeout(typeLoop, 400); return } }
+        setTimeout(typeLoop, deleting ? 40 : 70);
+      }
+      setTimeout(typeLoop, 1800);
+    }
+
+    /* ─────────────────────────────────────────
+       CODE TERMINAL TYPING
+    ───────────────────────────────────────── */
+    const ctTyped = document.getElementById('ctTyped');
+    if (ctTyped) {
+      const lines = [
+        { text: 'composer require laravel/sanctum', delay: 0 },
+        { text: 'php artisan migrate --seed', delay: 1400 },
+        { text: 'git push origin main', delay: 2900 },
+      ];
+      function typeTermLine(text, el, cb) {
+        let i = 0;
+        const iv = setInterval(() => {
+          el.textContent = text.slice(0, ++i);
+          if (i === text.length) { clearInterval(iv); if (cb) setTimeout(cb, 600); }
+        }, 45);
+      }
+      function runTermLines(idx) {
+        if (idx >= lines.length) {
+          setTimeout(() => {
+            ctTyped.closest('.ct-line').insertAdjacentHTML('afterend',
+              '<div class="ct-line"><span class="ct-p">$ </span><span id="ctTyped2"></span><span class="ct-cursor"></span></div>'
+            );
+            const next = document.getElementById('ctTyped2');
+            if (next) next.id = 'ctTyped'; // reuse for next loop
+          }, 800);
+          return;
+        }
+        setTimeout(() => {
+          typeTermLine(lines[idx].text, ctTyped, () => {
+            // append output line
+            const out = document.createElement('div');
+            out.className = 'ct-line';
+            out.innerHTML = `<span class="ct-out ct-g">&gt; Done.</span>`;
+            ctTyped.closest('.ct-line').insertAdjacentElement('afterend', out);
+            // new prompt line
+            const newLine = document.createElement('div');
+            newLine.className = 'ct-line';
+            newLine.innerHTML = '<span class="ct-p">$ </span><span id="ctTyped"></span><span class="ct-cursor"></span>';
+            out.insertAdjacentElement('afterend', newLine);
+            runTermLines(idx + 1);
+          });
+        }, idx === 0 ? 800 : 0);
+      }
+      // start when terminal scrolls into view
+      const termObs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { runTermLines(0); termObs.unobserve(e.target); } });
+      }, { threshold: .3 });
+      termObs.observe(ctTyped.closest('.code-term'));
+    }
+
+    /* ─────────────────────────────────────────
+       ANIMATED COUNTERS
+    ───────────────────────────────────────── */
+    function animateCounter(el) {
+      const target = parseInt(el.dataset.count, 10);
+      const suffix = el.dataset.suffix || '';
+      const duration = 1400;
+      const start = performance.now();
+      function tick(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        // ease out quad
+        const eased = 1 - (1 - progress) * (1 - progress);
+        el.textContent = Math.floor(eased * target) + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
+        else el.textContent = target + suffix;
+      }
+      requestAnimationFrame(tick);
+    }
+
+    /* ─────────────────────────────────────────
+       NAV SCROLL + ACTIVE LINK
+    ───────────────────────────────────────── */
+    const navEl = document.getElementById('nav');
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.n-links a');
+    window.addEventListener('scroll', () => {
+      navEl.classList.toggle('sc', scrollY > 50);
+      const sh = document.getElementById('scrollHint');
+      if (sh) sh.style.opacity = scrollY > 120 ? '0' : '';
+      let active = '';
+      sections.forEach(s => { if (scrollY >= s.offsetTop - 160) active = s.id });
+      navLinks.forEach(a => { a.style.color = a.getAttribute('href') === '#' + active ? 'var(--text)' : ''; });
+    }, { passive: true });
+
+    /* ─────────────────────────────────────────
+       SCROLL REVEAL — all variants
+    ───────────────────────────────────────── */
+    const obsRev = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('vis');
+          // skill bars
+          e.target.querySelectorAll('.sk-fill').forEach(b => { b.style.width = b.dataset.w });
+          // animated counters
+          e.target.querySelectorAll('[data-count]').forEach(animateCounter);
+          obsRev.unobserve(e.target);
+        }
+      });
+    }, { threshold: .12 });
+    ['fi', 'fi-left', 'fi-right', 'fi-scale', 'fi-blur'].forEach(cls => {
+      document.querySelectorAll('.' + cls).forEach(el => obsRev.observe(el));
+    });
+
+    /* ─────────────────────────────────────────
+       HERO NAME PARALLAX ON MOUSEMOVE
+    ───────────────────────────────────────── */
+    if (window.matchMedia('(pointer:fine)').matches) {
+      const hName = document.querySelector('.h-name');
+      if (hName) {
+        document.addEventListener('mousemove', e => {
+          const xRatio = (e.clientX / window.innerWidth - .5) * 14;
+          const yRatio = (e.clientY / window.innerHeight - .5) * 8;
+          hName.style.transform = `translate(${xRatio}px, ${yRatio}px)`;
+        }, { passive: true });
+      }
+    }
+
+    /* ─────────────────────────────────────────
+       AVATAR TILT
+    ───────────────────────────────────────── */
+    const avFrame = document.querySelector('.av-frame');
+    if (avFrame && window.matchMedia('(pointer:fine)').matches) {
+      avFrame.addEventListener('mousemove', e => {
+        const r = avFrame.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+        avFrame.style.transform = `perspective(600px) translateY(-4px) rotateX(${(-y * 8).toFixed(1)}deg) rotateY(${(x * 8).toFixed(1)}deg)`;
+        avFrame.style.transition = 'transform .1s';
+      });
+      avFrame.addEventListener('mouseleave', () => {
+        avFrame.style.transform = 'perspective(600px) translateY(0) rotateX(0) rotateY(0)';
+        avFrame.style.transition = 'transform .5s cubic-bezier(.16,1,.3,1)';
+      });
+    }
+
+    /* ─────────────────────────────────────────
+       MAGNETIC BUTTONS
+    ───────────────────────────────────────── */
+    if (window.matchMedia('(pointer:fine)').matches) {
+      document.querySelectorAll('.btn').forEach(btn => {
+        btn.addEventListener('mousemove', e => {
+          const r = btn.getBoundingClientRect();
+          const x = (e.clientX - r.left - r.width / 2) * .25, y = (e.clientY - r.top - r.height / 2) * .25;
+          btn.style.transform = `translate(${x}px,${y}px) translateY(-2px)`;
+        });
+        btn.addEventListener('mouseleave', () => { btn.style.transform = ''; btn.style.transition = 'transform .4s cubic-bezier(.16,1,.3,1)' });
+      });
+    }
+
+    /* ─────────────────────────────────────────
+       CONTACT FORM — AJAX SUBMIT
+    ───────────────────────────────────────── */
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const inputs = contactForm.querySelectorAll('input, textarea');
+        let ok = true;
+        inputs.forEach(f => {
+          if (!f.value.trim()) {
+            f.style.borderColor = '#f87171';
+            f.style.boxShadow = '0 0 0 3px rgba(248,113,113,.15)';
+            f.addEventListener('input', () => { f.style.borderColor = ''; f.style.boxShadow = ''; }, { once: true });
+            ok = false;
+          }
+        });
+        if (!ok) return;
+        const btn = contactForm.querySelector('button[type="submit"]');
+        btn.textContent = 'Versturen\u2026'; btn.disabled = true;
+        try {
+          const res = await fetch(contactForm.action, {
+            method: 'POST',
+            body: new FormData(contactForm),
+            headers: { 'Accept': 'application/json' }
+          });
+          if (res.ok) {
+            contactForm.innerHTML = `
+              <div class="form-thanks">
+                <div class="form-thanks-icon">&#10003;</div>
+                <div class="form-thanks-title">Bedankt voor je bericht!</div>
+                <p class="form-thanks-sub">Ik neem zo snel mogelijk contact met je op.</p>
+                <a href="#hero" class="btn b-out" style="margin-top:24px">Terug naar portfolio &rarr;</a>
+              </div>`;
+          } else {
+            btn.textContent = 'Probeer opnieuw'; btn.disabled = false; btn.style.background = '#f87171';
+          }
+        } catch (err) {
+          btn.textContent = 'Probeer opnieuw'; btn.disabled = false; btn.style.background = '#f87171';
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>
